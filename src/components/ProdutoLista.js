@@ -2,12 +2,12 @@ import React from 'react';
 import ProdutoItem from "./ProdutoItem"
 
 
-function ProdutoLista ({listaProdutos}) {
+function ProdutoLista (props) {
     return (
             <ul>
                 <div className="row">
-                    {listaProdutos.map((p,index) => (
-                        <ProdutoItem key={index} produto={p} />
+                    {props.listaProdutos.map((p,index) => (
+                        <ProdutoItem key={index} chave={index} produto={p} callback={props.callback}/>
                     ))}
                 </div>
             </ul>
